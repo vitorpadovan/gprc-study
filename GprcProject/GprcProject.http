@@ -1,0 +1,6 @@
+@GprcProject_HostAddress = http://localhost:5168
+
+GET {{GprcProject_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
