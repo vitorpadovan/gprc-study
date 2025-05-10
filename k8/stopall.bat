@@ -6,3 +6,5 @@ minikube stop
 
 REM #3. Se quiser realmente "zerar" tudo, você pode excluir o cluster Minikube
 minikube delete
+
+docker system prune -a --volumes --force
