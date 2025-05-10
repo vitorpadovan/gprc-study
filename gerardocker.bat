@@ -1,0 +1,1 @@
+docker build -t vitorpadovan/gprc-testes:latest -f .\GprcProject\Dockerfile .\
