@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minha-aplicacao
+  labels:
+    app: minha-aplicacao
+spec:
+  replicas: 1 # Começamos com 1 réplica
+  selector:
+    matchLabels:
+      app: minha-aplicacao
+  template:
+    metadata:
+      labels:
+        app: minha-aplicacao
+    spec:
+      containers:
+        - name: minha-aplicacao
+          image: gprc-testes:latest # Substitua pelo nome da sua imagem
+          imagePullPolicy: IfNotPresent # Usa a imagem local se disponível
+          ports:
+            - containerPort: 80 # Porta que sua aplicação usa (ajuste conforme necessário)
+          resources:
+            requests:
+              cpu: "100m" # Solicita 10% de um núcleo de CPU
+              memory: "128Mi" # Solicita 128MB de memória
+            limits:
+              cpu: "500m" # Limita a 50% de um núcleo de CPU
+              memory: "256Mi" # Limita a 256MB de memória
