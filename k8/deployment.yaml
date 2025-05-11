@@ -16,10 +16,10 @@ spec:
     spec:
       containers:
         - name: minha-aplicacao
-          image: vitorpadovan/gprcvitor:latest # Imagem já definida
-          imagePullPolicy: Never # Nunca tenta baixar do registro (usa apenas local)
+          image: vitorpadovan/gprc # Atualizado para usar a imagem gerada no script
+          imagePullPolicy: IfNotPresent # Nunca tenta baixar do registro (usa apenas local)
           ports:
-            - containerPort: 80 # Porta que sua aplicação usa (ajuste conforme necessário)
+            - containerPort: 8080 # Porta que sua aplicação usa (ajuste conforme necessário)
           resources:
             requests:
               cpu: "100m" # Solicita 10% de um núcleo de CPU

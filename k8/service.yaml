@@ -6,7 +6,7 @@ spec:
   selector:
     app: minha-aplicacao
   ports:
-    - port: 80 # Porta do serviço
-      targetPort: 80 # Porta do contêiner (ajuste conforme sua aplicação)
+    - port: 8080 # Porta do serviço
+      targetPort: 8080 # Porta do contêiner (ajuste conforme sua aplicação)
       nodePort: 30080 # Porta acessível externamente (30000-32767)
   type: NodePort # Tipo de serviço para acesso externo
