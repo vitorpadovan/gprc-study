@@ -29,6 +29,8 @@ REM 7. Configurar ambiente para o Docker no Minikube
 echo Configurando ambiente para usar Docker no Minikube...
 FOR /F "tokens=*" %%i IN ('minikube -p minikube docker-env --shell cmd') DO %%i
 
+minikube addons enable metrics-server
+
 REM 3. Gerar imagem Docker
 echo Gerando imagem Docker...
 docker build -t %DOCKER_IMAGE% -f ..\GprcProject\Dockerfile ..\
@@ -37,7 +39,7 @@ REM 10. Aplicar os manifestos
 echo Aplicando os manifestos Kubernetes...
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
-@REM kubectl apply -f hpa.yaml
+kubectl apply -f hpa.yaml
 
 REM 11. Aguardar a criação dos pods
 echo Aguardando a criacao dos pods (30 segundos)...

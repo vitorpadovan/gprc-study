@@ -5,7 +5,7 @@ metadata:
   labels:
     app: minha-aplicacao
 spec:
-  replicas: 1 # Começamos com 1 réplica
+  replicas: 5 # Começamos com 1 réplica
   selector:
     matchLabels:
       app: minha-aplicacao
@@ -22,8 +22,8 @@ spec:
             - containerPort: 8080 # Porta que sua aplicação usa (ajuste conforme necessário)
           resources:
             requests:
-              cpu: "100m" # Solicita 10% de um núcleo de CPU
+              cpu: "20m" # Solicita 10% de um núcleo de CPU
               memory: "128Mi" # Solicita 128MB de memória
             limits:
-              cpu: "500m" # Limita a 50% de um núcleo de CPU
+              cpu: "30m" # Limita a 50% de um núcleo de CPU
               memory: "256Mi" # Limita a 256MB de memória
